@@ -10,5 +10,16 @@ export default class Game{
     startGame(){
         this.deck.createDeck();
         this.deck.shuffle();
+        this.deck.addPlayerHandDeck();
     }
+
+    addCardToTable(){
+        
+    }
+
+
+
+
 }
+
+

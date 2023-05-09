@@ -25,8 +25,24 @@ export default class Deck {
     }
 
     addPlayerHandDeck(){
+        for (let i = 0; i <= 2; i++){
+            const card = this.generalDeck.pop();
+            const contenedorImagenes = document.getElementById(`card${i + 1}`);
+            const imagen = document.createElement('img');
+            contenedorImagenes.className = `card${i + 1}`
+            imagen.src = card.img;
+            contenedorImagenes.appendChild(imagen);
+            this.playerHandDeck.push(card)
+        }
+        console.log(this.playerHandDeck);
+    }
+
+
+    addplayerTableDeck(){
 
     }
+
+
 
 
 
@@ -62,7 +78,7 @@ export default class Deck {
             for (let j = 0; j < cantidad; j++) {
                 const organos = CardTypes.tipusOrgano[i];
                 const colores = Card.colores[i];
-                const imagen = `./imatges/organo${colores}`
+                const imagen = `./imatges/organo${colores}.png`
                 const card = new Card(colores, organos, imagen)
                 this.generalDeck.push(card);
             }
@@ -82,7 +98,7 @@ export default class Deck {
             for (let j = 0; j < 4; j++) {
                 const colores = Card.colores[i];
                 const type = "Virus"
-                const imagen = `./imatges/virus${colores}`
+                const imagen = `./imatges/virus${colores}.png`
                 const card2 = new Card(colores, type, imagen)
                 this.generalDeck.push(card2);
             }
@@ -99,7 +115,7 @@ export default class Deck {
             for (let j = 0; j < 4; j++) {
                 const colores = Card.colores[i];
                 const type = "Medicina"
-                const imagen = `./imatges/medicina${colores}`
+                const imagen = `./imatges/medicina${colores}.png`
                 const card3 = new Card(colores, type,imagen)
                 this.generalDeck.push(card3);
             }
@@ -111,8 +127,8 @@ export default class Deck {
      *
      */
     createMulticolorCards() {
-        const card4 = new Card("multicolor", "Virus",`./imatges/virusMulticolor`);
-        const card5 = new Card("multicolor", "Organo", `./imatges/organoMulticolor`);
+        const card4 = new Card("multicolor", "Virus",`./imatges/virusMulticolor.png`);
+        const card5 = new Card("multicolor", "Organo", `./imatges/organoMulticolor.png`);
         this.generalDeck.push(card4, card5);
     }
 }

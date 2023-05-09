@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+}
+.mazoJugador{
+    margin: 5%;
+    display: flex;
+    border-style: dotted;
+    border-color: red;
+}
+
+.mazoJugadorTable{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    border-style: dotted;
+    border-color: red;
+
+}
+
+
+
+img{
+    transition: transform 0.4s ease-in-out;
+    max-width: 130px;
+}
+img:hover{
+
+    transform:translateY(-30px);
+    cursor: pointer;
+    z-index: 0;
+}
+
+
+img {
+    border-radius: 15px;
+}
+
+
+
+.card1{
+    translate: 45px;
+    transform: rotate(-25deg);
+
+}
+.card2{
+    transform: translateY(-30px);
+}
+.card3{
+    translate: -45px;
+    transform: rotate(25deg);
+}

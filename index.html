@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>VirusGame</title>
-    <link href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script type="module" src="./Scripts/main.js"></script>
 
 </head>
 <body>
-<div><button></button></div>
+
+<div id="mazoJugadorTable" class="mazoJugadorTable"> </div>
+<div id="mazoJugador" class="mazoJugador">
+    <div id="card1" class="cards"></div>
+    <div id="card2" class="cards"></div>
+    <div id="card3" class="cards"></div>
+</div>
+
 </body>
 </html>
