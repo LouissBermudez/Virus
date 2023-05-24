@@ -1,26 +1,62 @@
 body{
+
+}
+.contenedor {
     display: flex;
-    height: 100vh;
     flex-direction: column;
-    align-items: center;
-    justify-content: end;
-
+    justify-content: space-evenly;
+    height: 100vh;
 }
-.mazoJugador{
-    margin: 5%;
+
+
+
+.discardPile{
+
+    background-image: url("./imatges/eliminar.png");
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    align-self: start;
+}
+
+.jugadores{
     display: flex;
-    border-style: dotted;
-    border-color: red;
+    justify-content: space-between;
+
+}
+.jugadores .mazoJugador:nth-child(1){
+    align-self: start;
+    display: flex;
+    border-style: solid;
+}
+.jugadores .mazoJugadorDos:nth-child(2){
+    border-style: solid;
+    display: flex;
+    visibility: hidden;
+    align-self: end;
+    height: 207px;
+    width: 400px;
+
 }
 
-.mazoJugadorTable{
-    width: 400px;
-    height: 300px;
+.mazoJugadorOneTable{
+    align-self: center;
+    width: 535px;
+    height: 195px;
     display: flex;
     flex-direction: row;
-    border-style: dotted;
-    border-color: red;
-
+    justify-content: center;
+    border-style: solid;
+}
+.mazoJugadorTwoTable{
+    align-self: center;
+    width: 535px;
+    height: 195px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-style: solid;
 }
 
 
@@ -42,16 +78,54 @@ img {
 }
 
 
+/*----------------------Mazo jugador 1 ------------------ */
 
-.card1{
+.mazoJugador .cards:nth-child(1){
+
     translate: 45px;
     transform: rotate(-25deg);
 
 }
-.card2{
+.mazoJugador .cards:nth-child(2){
+
     transform: translateY(-30px);
 }
-.card3{
+.mazoJugador .cards:nth-child(3){
+
     translate: -45px;
     transform: rotate(25deg);
 }
+
+
+
+/* --------------------Mazo jugador 2--------------------- */
+.mazoJugadorDos .cards:nth-child(1){
+
+    translate: 45px;
+    transform: rotate(-25deg);
+
+}
+.mazoJugadorDos .cards:nth-child(2){
+
+    transform: translateY(-30px);
+}
+.mazoJugadorDos .cards:nth-child(3){
+
+    translate: -45px;
+    transform: rotate(25deg);
+}
+
+
+.mazoJugadorOneTable .cartaMesa .cards{
+    height: 195px;
+}.mazoJugadorOneTable .cartaMesa .cards:nth-child(2){
+    border-style: none;
+    transform: translateY(-55%);
+     height: 195px;
+}
+.mazoJugadorOneTable .cartaMesa .cards:nth-child(3){
+    border-style: none;
+    transform: translateY(-125%);
+    height: 195px;
+}
+

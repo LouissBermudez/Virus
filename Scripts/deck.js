@@ -6,8 +6,10 @@ export default class Deck {
     constructor() {
         this.generalDeck = [];
         this.discardPile = [];
-        this.playerTableDeck = [];
-        this.playerHandDeck = [];
+        this.playerOneTableDeck = [];
+        this.playerOneHandDeck = [0];
+        this.playerTwoHandDeck = [0];
+        this.playerTwoTableDeck = [];
     }
 
 
@@ -25,32 +27,42 @@ export default class Deck {
     }
 
     addPlayerHandDeck(){
-        for (let i = 0; i <= 2; i++){
-            const card = this.generalDeck.pop();
-            const contenedorImagenes = document.getElementById(`card${i + 1}`);
-            const imagen = document.createElement('img');
-            contenedorImagenes.className = `card${i + 1}`
-            imagen.src = card.img;
-            contenedorImagenes.appendChild(imagen);
-            this.playerHandDeck.push(card)
+        for (let i = 1; i <= 3; i++){
+            this.addCardPlayerOneHandDeck();
+            this.addCardPlayerTwoHandDeck();
         }
-        console.log(this.playerHandDeck);
+        console.log(this.playerOneHandDeck);
+        console.log(this.playerTwoHandDeck);
     }
 
-
-    addplayerTableDeck(){
+    addCardPlayerOneHandDeck(){
+        const card = this.generalDeck.pop();
+        const contenedorImagenes = document.createElement('div');
+        const imagen = document.createElement('img');
+        const contenedor = document.getElementById("mazoJugador")
+        imagen.src = card.img;
+        contenedorImagenes.className = "cards"
+        contenedorImagenes.dataset.tipo = `${card.tipo}`
+        contenedorImagenes.id = `carta${card.color}`
+        contenedor.appendChild(contenedorImagenes);
+        contenedorImagenes.appendChild(imagen);
+        this.playerOneHandDeck.push(card)
 
     }
+    addCardPlayerTwoHandDeck(){
+        const card = this.generalDeck.pop();
+        const contenedorImagenes = document.createElement('div');
+        const imagen = document.createElement('img');
+        const contenedor = document.getElementById("mazoJugadorDos")
+        imagen.src = card.img;
+        contenedorImagenes.className = "cards"
+        contenedorImagenes.dataset.tipo = `${card.tipo}`
+        contenedorImagenes.id = `carta${card.color}`
+        contenedor.appendChild(contenedorImagenes);
+        contenedorImagenes.appendChild(imagen);
+        this.playerTwoHandDeck.push(card)
 
-
-
-
-
-
-
-
-
-
+    }
 
 
     /**
@@ -78,8 +90,9 @@ export default class Deck {
             for (let j = 0; j < cantidad; j++) {
                 const organos = CardTypes.tipusOrgano[i];
                 const colores = Card.colores[i];
-                const imagen = `./imatges/organo${colores}.png`
-                const card = new Card(colores, organos, imagen)
+                const imagen = `./imatges/organo${colores}.png`;
+                const tipoGeneral = "Organo"
+                const card = new Card(colores, organos, imagen, tipoGeneral)
                 this.generalDeck.push(card);
             }
 
@@ -99,7 +112,8 @@ export default class Deck {
                 const colores = Card.colores[i];
                 const type = "Virus"
                 const imagen = `./imatges/virus${colores}.png`
-                const card2 = new Card(colores, type, imagen)
+                const tipoGeneral = "Virus"
+                const card2 = new Card(colores, type, imagen,tipoGeneral)
                 this.generalDeck.push(card2);
             }
         }
@@ -116,19 +130,21 @@ export default class Deck {
                 const colores = Card.colores[i];
                 const type = "Medicina"
                 const imagen = `./imatges/medicina${colores}.png`
-                const card3 = new Card(colores, type,imagen)
+                const tipoGeneral = "Medicina"
+                const card3 = new Card(colores, type,imagen, tipoGeneral)
                 this.generalDeck.push(card3);
             }
         }
     }
 
     /**
+     * @function
      * Función para crear las cartas de tipo Multicolor.
      *
      */
     createMulticolorCards() {
-        const card4 = new Card("multicolor", "Virus",`./imatges/virusMulticolor.png`);
-        const card5 = new Card("multicolor", "Organo", `./imatges/organoMulticolor.png`);
+        const card4 = new Card("Multicolor", "Virus",`./imatges/virusMulticolor.png`, 'Virus');
+        const card5 = new Card("Multicolor", "Organo", `./imatges/organoMulticolor.png`, 'Organo');
         this.generalDeck.push(card4, card5);
     }
 }

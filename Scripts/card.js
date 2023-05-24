@@ -1,9 +1,10 @@
 export default class Card {
     static colores = ['Rojo', 'Verde', 'Azul', 'Amarillo', 'Multicolor'];
-    constructor(color, type,img) {
+    constructor(colour, tipo,img, typeGeneral) {
         this.img = img;
-        this.color = color;
-        this.type = type;
+        this.colour = colour;
+        this.tipo = tipo;
+        this.typeGeneral = typeGeneral;
     }
 
 
