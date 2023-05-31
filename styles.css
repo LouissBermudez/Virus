@@ -4,8 +4,7 @@ body{
 .contenedor {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 100vh;
+    height: 95vh;
 }
 
 
@@ -13,11 +12,11 @@ body{
 .discardPile{
 
     background-image: url("./imatges/eliminar.png");
-    background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-    align-self: start;
+    align-self: center;
 }
 
 .jugadores{
@@ -116,16 +115,27 @@ img {
 }
 
 
-.mazoJugadorOneTable .cartaMesa .cards{
-    height: 195px;
-}.mazoJugadorOneTable .cartaMesa .cards:nth-child(2){
-    border-style: none;
-    transform: translateY(-55%);
-     height: 195px;
+
+
+.cartaAzul .cards:nth-child(2){
+    transform: translateY(-80%);
+}.cartaAzul .cards:nth-child(3){
+    transform: translateY(-150%);
 }
-.mazoJugadorOneTable .cartaMesa .cards:nth-child(3){
-    border-style: none;
-    transform: translateY(-125%);
-    height: 195px;
+.cartaRojo .cards:nth-child(2){
+    transform: translateY(-80%);
+}.cartaRojo .cards:nth-child(3){
+    transform: translateY(-150%);
 }
+.cartaAmarillo .cards:nth-child(2){
+    transform: translateY(-80%);
+}.cartaAmarillo .cards:nth-child(3){
+    transform: translateY(-150%);
+}
+.cartaVerde .cards:nth-child(2){
+    transform: translateY(-80%);
+}.cartaVerde .cards:nth-child(3){
+    transform: translateY(-150%);
+}
+
 
